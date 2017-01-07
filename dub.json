@@ -1,0 +1,12 @@
+{
+  "name" : "masters",
+  "authors" : [
+    "Filip"
+  ],
+  "description" : "Masters research code",
+  "copyright" : "Copyright © 2016, Filip",
+  "license" : "proprietary",
+  "dependencies" : {
+    "msgpack-d" : "~>1.0.0-beta.4"
+  }
+}
