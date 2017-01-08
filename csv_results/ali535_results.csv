@@ -1,2 +1,2 @@
 noByBest;noByAvgBest;noByScore;cp;mp;popSize;maxEvals;mutation;crossover;natSel;genSel;totalBest;avgBest;totalWorst;avgWorst;span;avgSpan;score;duration
-0;0;0;0.3;0.1;100;250000;reverseSubsequence;subsequence;Std=RankRoulette;NoGender=Random;7290.56;7603.55;40817.8;40670.8;33527.2;33067.3;7603.55;00:48:03.381
+0;0;0;0.3;0.1;100;250000;reverseSubsequence;subsequence;Std=RankRoulette;NoGender=Random;7290.56;8711.4;40817.8;40648.3;33527.2;31936.9;8711.4;00:48:32.128
