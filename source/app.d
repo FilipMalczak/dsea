@@ -1,6 +1,7 @@
 import std.conv;
 import std.stdio;
 import std.algorithm;
+import std.string;
 
 import masters.experiments;
 import masters.mains.csvAll: runAll = run;
@@ -26,7 +27,11 @@ struct Tsp {
                 load("a280"),
                 load("ali535"),
                 load("rat783"),
-                load("nrw1739")
+                load("nrw1379"),
+                // with known optima,
+                // taken from http://www.math.uwaterloo.ca/tsp/vlsi/index.html
+                load("xqf131"), // optimum: 564
+                load("bcl380")  // optimum: 1621
             ];
         }
         return _datasets;
@@ -66,6 +71,8 @@ void plainGA(){
     );
 }
 
+//todo: try plain GA with gender selection instead of natural selection
+
 void gga(){
     exec(
         "GGA",
@@ -86,12 +93,14 @@ void sexualGA(){
 
 void dseaWithHarem(){
     exec(
-        "GGA",
+        "DSEA with harem gen. sel.",
         0.166667, 0.166667,
         76,
         "Std=RankRoulette", "Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5"
     );
 }
+
+//todo: try DSEA with other, non-harem gensel
 
 void runTsp(){
     plainGA();
@@ -119,6 +128,22 @@ void main(string[] args) {
                     );
                 else
                     throw new Exception("Specify dataset and outFile for csv_all target!");
+            } else {
+                foreach (arg; args) {
+                    switch (arg.toLower()) {
+                        case "all":
+                        case "experiments":
+                        case "exp": runTsp(); break;
+                        case "ga":
+                        case "plain": plainGA(); break;
+                        case "gga": gga(); break;
+                        case "sexualga":
+                        case "sga": sexualGA(); break;
+                        case "harem":
+                        case "dsea": dseaWithHarem(); break;
+                        default: throw new Exception("Unknown experiment to execute!");
+                    }
+                }
             }
         } else
             runTsp();
