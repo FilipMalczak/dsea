@@ -1,5 +1,5 @@
 noByBest;noByAvgBest;noByScore;cp;mp;popSize;maxEvals;mutation;crossover;natSel;genSel;totalBest;avgBest;totalWorst;avgWorst;span;avgSpan;score;duration
 0;0;0;0.166667;0.166667;76;250000;reverseSubsequence;subsequence;Std=RankRoulette;Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5;631.062;653.397;5181.45;4995.68;4550.38;4342.28;653.397;00:07:57.525
 1;1;1;0.166667;0.1;76;250000;reverseSubsequence;subsequence;Std=Random;Gender=Tourney,5=Tourney,5;660.799;685.932;5289.93;5101.25;4629.13;4415.32;685.932;00:00:12.360
-2;2;2;0.3;0.1;100;250000;reverseSubsequence;subsequence;Std=RankRoulette;NoGender=Random;668.545;712.73;5132.86;5009.29;4464.32;4296.56;712.73;00:10:53.421
-3;3;3;0.1;0.0333333;76;250000;reverseSubsequence;subsequence;Std=RankRoulette;GGA=Random;677.781;715.506;5216.59;5015.54;4538.81;4300.04;715.506;00:09:25.828
+2;2;2;0.1;0.0333333;76;250000;reverseSubsequence;subsequence;Std=RankRoulette;GGA=Random;665.611;709.269;5216.59;5009.55;4550.98;4300.28;709.269;00:09:25.624
+3;3;3;0.3;0.1;100;250000;reverseSubsequence;subsequence;Std=RankRoulette;NoGender=Random;668.545;712.73;5132.86;5009.29;4464.32;4296.56;712.73;00:10:53.421
