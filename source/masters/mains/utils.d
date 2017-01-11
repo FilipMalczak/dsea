@@ -23,7 +23,7 @@ abstract class CsvReport(RowClass) {
     auto repo = ResultsRepository("./results");
 
     @property string separator(){
-        return ";";
+        return "\t";
     }
     abstract @property string[] header();
 

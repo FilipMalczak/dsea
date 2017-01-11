@@ -1,4 +1,4 @@
-module masters.mains.csvAll;
+module masters.mains.tsvAll;
 
 import std.datetime;
 import std.algorithm;
@@ -138,5 +138,6 @@ class CsvAllReport: CsvReport!Row {
 }
 
 void run(string problem, string dataset, string outFile){
-    new CsvAllReport(problem, dataset).run(outFile);
+    auto report = new CsvAllReport(problem, dataset);
+    report.run(outFile);
 }

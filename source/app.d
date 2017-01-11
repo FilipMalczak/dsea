@@ -4,7 +4,8 @@ import std.algorithm;
 import std.string;
 
 import masters.experiments;
-import masters.mains.csvAll: runAll = run;
+import masters.mains.tsvAll: runAll = run;
+import masters.mains.divergence: runDiv = run;
 import masters.tsp.impl;
 
 struct Tsp {
@@ -44,7 +45,7 @@ int EVALS = 250000;
 
 void exec(string title, double cp, double mp, size_t popSize, string natSel, string genSel){
     writeln("===== "~title~" =====");
-    foreach (iter; 0..ITERS-1)
+    foreach (iter; 0..ITERS)
         ExperimentSetup!Path(
             Tsp.datasets,
             cp, mp,
@@ -113,7 +114,7 @@ void main(string[] args) {
     try {
         args = args[1..$];
         if (args.length > 0){
-            if (["csvall", "csv_all"].canFind(args[0])) {
+            if (["tsvall", "tsv_all"].canFind(args[0])) {
                 if (args.length == 3)
                     runAll(
                         "tsp",
@@ -128,6 +129,8 @@ void main(string[] args) {
                     );
                 else
                     throw new Exception("Specify dataset and outFile for csv_all target!");
+            } else if (["div", "divergence"].canFind(args[0])) {
+                runDiv();
             } else {
                 foreach (arg; args) {
                     switch (arg.toLower()) {

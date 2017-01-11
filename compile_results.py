@@ -1,10 +1,10 @@
 import csv, os, json
 
-CSV_DIR = "./csv_results"
+CSV_DIR = "./tsv_results"
 SUMMARIES_DIR = "./summaries"
-RAW_OUT = "raw.csv"
-SCALED_AVG_OUT = "scaled_avg.csv"
-SCALED_BEST_OUT = "scaled_best.csv"
+RAW_OUT = "raw.tsv"
+SCALED_AVG_OUT = "scaled_avg.tsv"
+SCALED_BEST_OUT = "scaled_best.tsv"
 
 def dataset_name(csv_name):
     return csv_name.partition("_")[0]
@@ -48,7 +48,7 @@ def gather_results():
         dataset_results = {}
         out[dataset] = {RAW: dataset_results}
         with open(os.path.join(CSV_DIR, csv_name)) as f:
-            reader = csv.DictReader(f, delimiter=";")
+            reader = csv.DictReader(f, delimiter="\t")
             for line in reader:
                 gensel = line["genSel"]
                 method = GENSEL_TO_NAME[gensel]
@@ -76,7 +76,7 @@ def pprint(adict):
     print json.dumps(adict, sort_keys=True, indent=4, separators=(',', ': '))
 
 def save_raw(results, f):
-    writer = csv.DictWriter(f, fieldnames=["Dataset"] + METHOD_ORDER, delimiter=";")
+    writer = csv.DictWriter(f, fieldnames=["Dataset"] + METHOD_ORDER, delimiter="\t")
     writer.writeheader()
     for dataset in DATASET_ORDER:
         avg_row = {
@@ -93,7 +93,7 @@ def save_raw(results, f):
         writer.writerow(best_row)
 
 def save_scaled(results, f, avg_or_best):
-    writer = csv.DictWriter(f, fieldnames=["Method"] + DATASET_ORDER, delimiter=";")
+    writer = csv.DictWriter(f, fieldnames=["Method"] + DATASET_ORDER, delimiter="\t")
     writer.writeheader()
     for method in METHOD_ORDER:
         row = {
