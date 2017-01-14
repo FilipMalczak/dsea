@@ -65,14 +65,27 @@ void exec(string title, double cp, double mp, size_t popSize, string natSel, str
 
 void plainGA(){
     exec(
-        "Plain GA",
+        "Plain GA (selection for survival)",
         0.3, 0.1,
         100,
         "Std=RankRoulette", "NoGender=Random"
     );
 }
 
-//todo: try plain GA with gender selection instead of natural selection
+void gensel(){
+    exec(
+        "Plain GA (selection for breeding)",
+        0.1, 0.1,
+        100,
+        "Std=Random", "NoGender=Tourney,5"
+    );
+}
+
+//todo: I guess the 2 methods above should also be tuned
+// I mean that following methods could have had e.g. popSize = 76, while previous
+// could go lower than 100; same goes with cp and mp
+
+//todo: check whether GGA and SexualGa are properly implemented
 
 void gga(){
     exec(
@@ -105,6 +118,7 @@ void dseaWithHarem(){
 
 void runTsp(){
     plainGA();
+    gensel();
     gga();
     sexualGA();
     dseaWithHarem();
@@ -139,6 +153,7 @@ void main(string[] args) {
                         case "exp": runTsp(); break;
                         case "ga":
                         case "plain": plainGA(); break;
+                        case "gensel": gensel(); break;
                         case "gga": gga(); break;
                         case "sexualga":
                         case "sga": sexualGA(); break;

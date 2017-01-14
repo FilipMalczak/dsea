@@ -46,15 +46,17 @@ void run(){
     ];
     auto methodOrder = [
         "Plain GA (selection for survival)",
+        "Plain GA (selection for breeding)",
         "GGA",
         "SexualGA",
         "DSEA with Harem"
     ];
     auto methods = [
         methodOrder[0]: "0.3_0.1_100_250000_reverseSubsequence_subsequence_Std=RankRoulette_NoGender=Random",
-        methodOrder[1]: "0.1_0.0333333_76_250000_reverseSubsequence_subsequence_Std=RankRoulette_GGA=Random",
-        methodOrder[2]: "0.166667_0.1_76_250000_reverseSubsequence_subsequence_Std=Random_Gender=Tourney,5=Tourney,5",
-        methodOrder[3]: "0.166667_0.166667_76_250000_reverseSubsequence_subsequence_Std=RankRoulette_Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5"
+        methodOrder[1]: "0.1_0.1_100_250000_reverseSubsequence_subsequence_Std=Random_NoGender=Tourney,5",
+        methodOrder[2]: "0.1_0.0333333_76_250000_reverseSubsequence_subsequence_Std=RankRoulette_GGA=Random",
+        methodOrder[3]: "0.166667_0.1_76_250000_reverseSubsequence_subsequence_Std=Random_Gender=Tourney,5=Tourney,5",
+        methodOrder[4]: "0.166667_0.166667_76_250000_reverseSubsequence_subsequence_Std=RankRoulette_Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5"
     ];
 
     double[] factors = [

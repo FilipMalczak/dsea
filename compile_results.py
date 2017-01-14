@@ -13,7 +13,8 @@ GENSEL_TO_NAME = {
     "Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5": "DSEA with Harem",
     "Gender=Tourney,5=Tourney,5": "SexualGA",
     "GGA=Random": "GGA",
-    "NoGender=Random": "Plain GA (selection for survival)"
+    "NoGender=Random": "Plain GA (selection for survival)",
+    "NoGender=Tourney,5": "Plain GA (selection for breeding)"
 }
 
 BASELINE = GENSEL_TO_NAME["NoGender=Random"]
@@ -36,6 +37,7 @@ DATASET_ORDER = [
 
 METHOD_ORDER = [
     "Plain GA (selection for survival)",
+    "Plain GA (selection for breeding)",
     "GGA",
     "SexualGA",
     "DSEA with Harem"
@@ -86,9 +88,13 @@ def save_raw(results, f):
             "Dataset": dataset+" ("+BEST+")"
         }
         for method in METHOD_ORDER:
-            result = results[dataset][RAW][method]
-            avg_row[method] = result[AVG]
-            best_row[method] = result[BEST]
+            try:
+                result = results[dataset][RAW][method]
+                avg_row[method] = result[AVG]
+                best_row[method] = result[BEST]
+            except:
+                avg_row[method] = "N/A"
+                best_row[method] = "N/A"
         writer.writerow(avg_row)
         writer.writerow(best_row)
 
@@ -100,7 +106,10 @@ def save_scaled(results, f, avg_or_best):
             "Method": method
         }
         for dataset in DATASET_ORDER:
-            row[dataset] = results[dataset][SCALED][method][avg_or_best]
+            try:
+                row[dataset] = results[dataset][SCALED][method][avg_or_best]
+            except:
+                row[dataset] = "N/A"
         writer.writerow(row)
 
 
