@@ -9,15 +9,18 @@ SCALED_BEST_OUT = "scaled_best.tsv"
 def dataset_name(csv_name):
     return csv_name.partition("_")[0]
     
-GENSEL_TO_NAME = {
-    "Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5": "DSEA with Harem",
-    "Gender=Tourney,5=Tourney,5": "SexualGA",
-    "GGA=Random": "GGA",
-    "NoGender=Random": "Plain GA (selection for survival)",
-    "NoGender=Tourney,5": "Plain GA (selection for breeding)"
+SELECTS_TO_NAME = {
+    ("Std=RankRoulette", "Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5"): "DSEA (harem gender selection)",
+    ("Std=RankRoulette", "NoGender=RankRoulette"): "DSEA (no gender, best operators)",
+    ("Std=RankRoulette", "NoGender=Tourney,5"): "DSEA (no gender, different operators)",
+    ("Std=Random", "Gender=Tourney,5=Tourney,5"): "SexualGA",
+    ("Std=RankRoulette", "GGA=Random"): "GGA",
+    ("Std=RankRoulette", "NoGender=Random"): "Plain GA (selection for survival)",
+    ("Std=Random", "NoGender=Tourney,5"): "Plain GA (selection for breeding)"
 }
 
-BASELINE = GENSEL_TO_NAME["NoGender=Random"]
+BASELINE_SELECTS = ("Std=RankRoulette", "NoGender=Random")
+BASELINE = SELECTS_TO_NAME[BASELINE_SELECTS]
 
 RAW = "raw"
 SCALED = "scaled"
@@ -40,7 +43,9 @@ METHOD_ORDER = [
     "Plain GA (selection for breeding)",
     "GGA",
     "SexualGA",
-    "DSEA with Harem"
+    "DSEA (no gender, best operators)",
+    "DSEA (no gender, different operators)",
+    "DSEA (harem gender selection)"
 ]
 
 def gather_results():
@@ -52,8 +57,10 @@ def gather_results():
         with open(os.path.join(CSV_DIR, csv_name)) as f:
             reader = csv.DictReader(f, delimiter="\t")
             for line in reader:
+                natsel = line["natSel"]
                 gensel = line["genSel"]
-                method = GENSEL_TO_NAME[gensel]
+                selects = (natsel, gensel)
+                method = SELECTS_TO_NAME[selects]
                 dataset_results[method] = {
                     AVG: float(line["avgBest"]),
                     BEST: float(line["totalBest"])

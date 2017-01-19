@@ -105,6 +105,24 @@ void sexualGA(){
     );
 }
 
+void dseaWithNoGenderAndBestSelects(){
+    exec(
+        "DSEA with no gender (best parameters)",
+        0.1, 0.0333333,
+        76,
+        "Std=RankRoulette", "NoGender=RankRoulette"
+    );
+}
+
+void dseaWithNoGenderAndDifferentSelects(){
+    exec(
+        "DSEA with no gender (gen. sel. and nat. sel. are different)",
+        0.1, 0.0333333,
+        76,
+        "Std=RankRoulette", "NoGender=Tourney,5"
+    );
+}
+
 void dseaWithHarem(){
     exec(
         "DSEA with harem gen. sel.",
@@ -114,6 +132,12 @@ void dseaWithHarem(){
     );
 }
 
+void dsea(){
+    dseaWithNoGenderAndBestSelects();
+    dseaWithNoGenderAndDifferentSelects();
+    dseaWithHarem();
+}
+
 //todo: try DSEA with other, non-harem gensel
 
 void runTsp(){
@@ -121,7 +145,7 @@ void runTsp(){
     gensel();
     gga();
     sexualGA();
-    dseaWithHarem();
+    dsea();
 }
 
 void main(string[] args) {
@@ -157,8 +181,10 @@ void main(string[] args) {
                         case "gga": gga(); break;
                         case "sexualga":
                         case "sga": sexualGA(); break;
-                        case "harem":
-                        case "dsea": dseaWithHarem(); break;
+                        case "harem": dseaWithHarem(); break;
+                        case "dsea-nogender-best": dseaWithNoGenderAndBestSelects(); break;
+                        case "dsea-nogender-different": dseaWithNoGenderAndDifferentSelects(); break;
+                        case "dsea": dseaWithNoGenderAndBestSelects(); break;
                         default: throw new Exception("Unknown experiment to execute!");
                     }
                 }
