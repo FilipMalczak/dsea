@@ -1,7 +1,8 @@
 noByBest	noByAvgBest	noByScore	cp	mp	popSize	maxEvals	mutation	crossover	natSel	genSel	totalBest	avgBest	totalWorst	avgWorst	span	avgSpan	score	duration
 0	0	0	0.166667	0.166667	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5	308071	320858	1.46241e+06	1.45361e+06	1.15434e+06	1.13276e+06	320858	01:45:32.145
 1	1	1	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=RankRoulette	382885	405187	1.46284e+06	1.4568e+06	1.07996e+06	1.05161e+06	405187	02:46:41.986
-2	2	2	0.166667	0.1	76	250000	reverseSubsequence	subsequence	Std=Random	Gender=Tourney,5=Tourney,5	429583	447733	1.49452e+06	1.46684e+06	1.06493e+06	1.01911e+06	447733	00:16:40.407
-3	3	3	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	GGA=Random	476074	497174	1.48409e+06	1.45952e+06	1.00802e+06	962349	497174	02:27:11.194
-4	4	4	0.1	0.1	100	250000	reverseSubsequence	subsequence	Std=Random	NoGender=Tourney,5	490739	506568	1.47699e+06	1.46535e+06	986255	958781	506568	00:19:08.614
-5	5	5	0.3	0.1	100	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=Random	619724	636654	1.48431e+06	1.45619e+06	864591	819537	636654	02:34:23. 95
+2	2	2	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=Tourney,5	410226	416930	1.44897e+06	1.44807e+06	1.03874e+06	1.03114e+06	416930	02:05:16.742
+3	3	3	0.166667	0.1	76	250000	reverseSubsequence	subsequence	Std=Random	Gender=Tourney,5=Tourney,5	429583	447733	1.49452e+06	1.46684e+06	1.06493e+06	1.01911e+06	447733	00:16:40.407
+4	4	4	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	GGA=Random	476074	497174	1.48409e+06	1.45952e+06	1.00802e+06	962349	497174	02:27:11.194
+5	5	5	0.1	0.1	100	250000	reverseSubsequence	subsequence	Std=Random	NoGender=Tourney,5	490739	506568	1.47699e+06	1.46535e+06	986255	958781	506568	00:19:08.614
+6	6	6	0.3	0.1	100	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=Random	619724	636654	1.48431e+06	1.45619e+06	864591	819537	636654	02:34:23. 95

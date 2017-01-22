@@ -1,7 +1,8 @@
 noByBest	noByAvgBest	noByScore	cp	mp	popSize	maxEvals	mutation	crossover	natSel	genSel	totalBest	avgBest	totalWorst	avgWorst	span	avgSpan	score	duration
 0	0	0	0.166667	0.166667	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5	3774.35	4166.63	41137	40769.1	37362.6	36602.5	4166.63	00:34:24.265
 1	1	1	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=RankRoulette	4894.72	5329.46	42159.6	40895.2	37264.9	35565.8	5329.46	00:52:02.694
-3	2	2	0.166667	0.1	76	250000	reverseSubsequence	subsequence	Std=Random	Gender=Tourney,5=Tourney,5	6123.79	6404	42047.8	41187.9	35924	34783.9	6404	00:02:37.650
-2	3	3	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	GGA=Random	5946.29	6458.64	41340	40871.7	35393.7	34413.1	6458.64	00:48:42. 45
-4	4	4	0.1	0.1	100	250000	reverseSubsequence	subsequence	Std=Random	NoGender=Tourney,5	6669.25	7455.48	41638.1	41196.2	34968.8	33740.8	7455.48	00:03:00.462
-5	5	5	0.3	0.1	100	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=Random	7290.56	8837.16	40945.4	40648.9	33654.8	31811.8	8837.16	00:49:58.390
+3	2	2	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=Tourney,5	5988.32	6206.37	41110.2	40898.6	35121.9	34692.3	6206.37	00:39:46. 60
+4	3	3	0.166667	0.1	76	250000	reverseSubsequence	subsequence	Std=Random	Gender=Tourney,5=Tourney,5	6123.79	6404	42047.8	41187.9	35924	34783.9	6404	00:02:37.650
+2	4	4	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	GGA=Random	5946.29	6458.64	41340	40871.7	35393.7	34413.1	6458.64	00:48:42. 45
+5	5	5	0.1	0.1	100	250000	reverseSubsequence	subsequence	Std=Random	NoGender=Tourney,5	6669.25	7455.48	41638.1	41196.2	34968.8	33740.8	7455.48	00:03:00.462
+6	6	6	0.3	0.1	100	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=Random	7290.56	8837.16	40945.4	40648.9	33654.8	31811.8	8837.16	00:49:58.390

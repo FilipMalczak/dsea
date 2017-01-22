@@ -1,7 +1,8 @@
 noByBest	noByAvgBest	noByScore	cp	mp	popSize	maxEvals	mutation	crossover	natSel	genSel	totalBest	avgBest	totalWorst	avgWorst	span	avgSpan	score	duration
 0	0	0	0.166667	0.166667	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5	631.062	653.46	5181.45	4997.07	4550.38	4343.61	653.46	00:07:55.822
-1	1	1	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=RankRoulette	636.299	674.009	5166.6	4990.01	4530.3	4316	674.009	00:10:55.238
-3	2	2	0.166667	0.1	76	250000	reverseSubsequence	subsequence	Std=Random	Gender=Tourney,5=Tourney,5	660.799	684.181	5289.93	5088.55	4629.13	4404.37	684.181	00:00:12.633
-2	3	3	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	GGA=Random	657.084	701.707	5216.59	5014.51	4559.51	4312.8	701.707	00:09:23.236
-5	4	4	0.1	0.1	100	250000	reverseSubsequence	subsequence	Std=Random	NoGender=Tourney,5	686.516	709.096	5148.64	5094.63	4462.12	4385.53	709.096	00:00:14.726
-4	5	5	0.3	0.1	100	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=Random	668.545	715.885	5132.86	5012.95	4464.32	4297.06	715.885	00:10:52.121
+2	1	1	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=Tourney,5	653.801	671.644	5074.97	5039.25	4421.17	4367.61	671.644	00:08:32.943
+1	2	2	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=RankRoulette	636.299	674.009	5166.6	4990.01	4530.3	4316	674.009	00:10:55.238
+4	3	3	0.166667	0.1	76	250000	reverseSubsequence	subsequence	Std=Random	Gender=Tourney,5=Tourney,5	660.799	684.181	5289.93	5088.55	4629.13	4404.37	684.181	00:00:12.633
+3	4	4	0.1	0.0333333	76	250000	reverseSubsequence	subsequence	Std=RankRoulette	GGA=Random	657.084	701.707	5216.59	5014.51	4559.51	4312.8	701.707	00:09:23.236
+6	5	5	0.1	0.1	100	250000	reverseSubsequence	subsequence	Std=Random	NoGender=Tourney,5	686.516	709.096	5148.64	5094.63	4462.12	4385.53	709.096	00:00:14.726
+5	6	6	0.3	0.1	100	250000	reverseSubsequence	subsequence	Std=RankRoulette	NoGender=Random	668.545	715.885	5132.86	5012.95	4464.32	4297.06	715.885	00:10:52.121
