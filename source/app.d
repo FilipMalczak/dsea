@@ -123,6 +123,15 @@ void dseaWithNoGenderAndDifferentSelects(){
     );
 }
 
+void dseaWithGender(){
+    exec(
+        "DSEA with gender",
+        0.1, 0.1,
+        76,
+        "Std=RankRoulette", "Gender=Tourney,3=Tourney,5"
+    );
+}
+
 void dseaWithHarem(){
     exec(
         "DSEA with harem gen. sel.",
@@ -135,6 +144,7 @@ void dseaWithHarem(){
 void dsea(){
     dseaWithNoGenderAndBestSelects();
     dseaWithNoGenderAndDifferentSelects();
+    dseaWithGender();
     dseaWithHarem();
 }
 
@@ -181,9 +191,10 @@ void main(string[] args) {
                         case "gga": gga(); break;
                         case "sexualga":
                         case "sga": sexualGA(); break;
-                        case "harem": dseaWithHarem(); break;
                         case "dsea-nogender-best": dseaWithNoGenderAndBestSelects(); break;
                         case "dsea-nogender-different": dseaWithNoGenderAndDifferentSelects(); break;
+                        case "dsea-gender": dseaWithGender(); break;
+                        case "dsea-harem": dseaWithHarem(); break;
                         case "dsea": dseaWithNoGenderAndBestSelects(); break;
                         default: throw new Exception("Unknown experiment to execute!");
                     }

@@ -13,6 +13,7 @@ SELECTS_TO_NAME = {
     ("Std=RankRoulette", "Harem=3=0.8=Tourney,5=Tourney,5=Tourney,5"): "DSEA (harem gender selection)",
     ("Std=RankRoulette", "NoGender=RankRoulette"): "DSEA (no gender, best operators)",
     ("Std=RankRoulette", "NoGender=Tourney,5"): "DSEA (no gender, different operators)",
+    ('Std=RankRoulette', 'Gender=Tourney,3=Tourney,5'): "DSEA (gender)",
     ("Std=Random", "Gender=Tourney,5=Tourney,5"): "SexualGA",
     ("Std=RankRoulette", "GGA=Random"): "GGA",
     ("Std=RankRoulette", "NoGender=Random"): "Plain GA (selection for survival)",
@@ -43,8 +44,9 @@ METHOD_ORDER = [
     "Plain GA (selection for breeding)",
     "GGA",
     "SexualGA",
-    "DSEA (no gender, best operators)",
     "DSEA (no gender, different operators)",
+    "DSEA (no gender, best operators)",
+    "DSEA (gender)",
     "DSEA (harem gender selection)"
 ]
 
